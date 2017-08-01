@@ -59,6 +59,9 @@
         </dd>
 
     </dl>
+    <div>
+        <p>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) you will retire in <span>@ViewBag.RetirementAge</span> years with <span>@ViewBag.dollars</span> in the bank, vacation home in <span>@ViewBag.Places</span> and a <span>@ViewBag.sweetcars</span>.</p>
+    </div>
 </div>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id = Model.CustomerID }) |

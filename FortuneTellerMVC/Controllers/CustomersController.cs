@@ -32,7 +32,127 @@ namespace FortuneTellerMVC.Controllers
             {
                 return HttpNotFound();
             }
-            return View(customer);
+            if (customer.Age % 2 ==0)
+            {
+                ViewBag.RetirementAge = 75;
+            }
+            else
+            {
+                ViewBag.RetirementAge = 90;
+            }
+
+            if (customer.NumberOfSiblings == 0)
+            {
+                ViewBag.Places = "Puerto Rico";
+            }
+            else if (customer.NumberOfSiblings == 1)
+            {
+                ViewBag.Places = "San Diego";
+            }
+            else if (customer.NumberOfSiblings == 2)
+            {
+                ViewBag.Places = "Texas";
+            }
+            else if (customer.NumberOfSiblings == 3)
+            {
+                ViewBag.Places = "Florida";
+            }
+            else if (customer.NumberOfSiblings == 4)
+            {
+                ViewBag.Places = "Detroit";
+            }
+            else
+            {
+                ViewBag.Places = "Cardboard box in Save-A-Lot";
+            }
+
+            switch (customer.FavoriteColor.ToLower())
+            {
+                case "red":
+                    ViewBag.sweetCars = "Lambo";
+                    break;
+                case "orange":
+                    ViewBag.sweetCars = "Hummer";
+                    break;
+                case "yellow":
+                    ViewBag.sweetCars = "Porche";
+                    break;
+                case "green":
+                    ViewBag.sweetCars = "BMW";
+                    break;
+                case "blue":
+                    ViewBag.sweetCars = "Prius";
+                    break;
+                case "indigo":
+                    ViewBag.sweetCars = "Motorcycle";
+                    break;
+                case "violet":
+                    ViewBag.sweetCars = "Limo";
+                    break;
+                default:
+                    ViewBag. sweetCars = "none";
+                    break;
+            }
+
+            if (customer.BirthMonth == "January")
+            {
+                ViewBag.dollars = "$100,000";
+
+            }
+            else if (customer.BirthMonth == "Febuary")
+            {
+                ViewBag.dollars = "$100,000";
+            }
+            else if (customer.BirthMonth == "March")
+            {
+                ViewBag.dollars = "$100,000";
+            }
+            else if (customer.BirthMonth == "April")
+            {
+                ViewBag.dollars = "$100,000";
+            }
+            else if (customer.BirthMonth == "May")
+            {
+                ViewBag.dollars = "$300,000";
+            }
+            else if (customer.BirthMonth == "June")
+            {
+                ViewBag.dollars = "$300,000";
+            }
+            else if (customer.BirthMonth == "July")
+            {
+                ViewBag.dollars = "$300,000";
+            }
+            else if (customer.BirthMonth == "August")
+            {
+                ViewBag.dollars = "$300,000";
+            }
+            else if (customer.BirthMonth == "September")
+            {
+                ViewBag.dollars = "$500,000";
+            }
+            else if (customer.BirthMonth == "October")
+            {
+                ViewBag.dollars = "$500,000";
+            }
+            else if (customer.BirthMonth == "November")
+            {
+                ViewBag.dollars = "$500,000";
+            }
+            else if (customer.BirthMonth == "December")
+            {
+                ViewBag.dollars = "$500,000";
+            }
+            else
+            {
+                ViewBag.dollars = "$0.00";
+            }
+
+
+
+
+
+                return View(customer);
         }
 
         // GET: Customers/Create
